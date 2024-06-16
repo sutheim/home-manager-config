@@ -17,9 +17,16 @@
         gitui
       ];
 
+
       inherit username;
       homeDirectory = "/home/${username}";
 
       stateVersion = "23.11";
+    };
+    nix = {
+      package = pkgs.nix;
+      extraOptions = ''
+        experimental-features = nix-command flakes
+      '';
     };
 }
