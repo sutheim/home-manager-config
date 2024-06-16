@@ -6,6 +6,8 @@
       neovim
       git
       zig
+      rustup
+      7zip
     ];
 
     username = "sondre";
