@@ -2,12 +2,13 @@
 {
   home = {
     packages = with pkgs; [
-      hello
       neovim
       git
       zig
       rustup
       unzip
+      sqlite #mainly for neovim
+      nodejs_22
     ];
 
     username = "sondre";
