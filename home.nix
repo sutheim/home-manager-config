@@ -8,7 +8,7 @@
       rustup
       unzip
       sqlite
-      nodejs_22
+      nodejs
     ];
 
     username = "sondre";
