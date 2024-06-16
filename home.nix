@@ -7,7 +7,7 @@
       zig
       rustup
       unzip
-      sqlite #mainly for neovim
+      sqlite
       nodejs_22
     ];
 
