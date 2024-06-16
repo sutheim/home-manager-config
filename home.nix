@@ -9,6 +9,8 @@
       unzip
       sqlite
       nodejs
+      just
+      dotnet
     ];
 
     username = "sondre";
