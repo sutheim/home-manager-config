@@ -32,5 +32,9 @@
       '';
     };
 
+    programs = {
+      alacritty.enable = true;
+    };
+
     fonts.fontconfig.enable = true;
 }
