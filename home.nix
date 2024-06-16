@@ -3,6 +3,9 @@
   home = {
     packages = with pkgs; [
       hello
+      neovim
+      git
+      zig
     ];
 
     username = "sondre";
