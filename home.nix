@@ -15,6 +15,7 @@
         dotnet-sdk_8
         nushell
         gitui
+        (nerdfonts.override { fonts = [ "Cousine" ]; })
       ];
 
 
@@ -23,10 +24,13 @@
 
       stateVersion = "23.11";
     };
+
     nix = {
       package = pkgs.nix;
       extraOptions = ''
         experimental-features = nix-command flakes
       '';
     };
+
+    fonts.fontconfig.enable = true;
 }
