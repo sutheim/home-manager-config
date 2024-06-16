@@ -2,10 +2,14 @@
   let
     username = "sondre";
   in {
+    imports = [
+	./nvim-config.nix
+    ];
+
     home = {
       packages = with pkgs; [
         neovim
-        git
+	git
         zig
         rustup
         unzip
