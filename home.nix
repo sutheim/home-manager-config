@@ -13,6 +13,8 @@
         nodejs
         just
         dotnet-sdk_8
+        nushell
+        gitui
       ];
 
       inherit username;
