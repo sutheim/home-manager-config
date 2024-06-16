@@ -7,7 +7,7 @@
       git
       zig
       rustup
-      7zip
+      unzip
     ];
 
     username = "sondre";
