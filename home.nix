@@ -10,7 +10,7 @@
       sqlite
       nodejs
       just
-      dotnet
+      dotnet-sdk
     ];
 
     username = "sondre";
