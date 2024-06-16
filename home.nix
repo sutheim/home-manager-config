@@ -8,6 +8,11 @@
       zig
     ];
 
+    nix = {
+      package = pkgs.nix;
+      settings.experimental-features = [ "nix-command" "flakes" ];
+    };
+
     username = "sondre";
     homeDirectory = "/home/sondre";
 
