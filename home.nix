@@ -11,7 +11,6 @@
         zig
         rustup
         unzip
-        sqlite
         nodejs
         just
         dotnet-sdk_8
@@ -38,7 +37,6 @@
       alacritty.enable = true;
       home-manager.enable = true;
     };
-
 
     fonts.fontconfig.enable = true;
 }
