@@ -4,12 +4,12 @@
   in {
     imports = [
 	    ./nvim-config.nix
+	    ./rust-config.nix
     ];
 
     home = {
       packages = with pkgs; [
         zig
-        rustup
         unzip
         nodejs
         just
