@@ -8,8 +8,7 @@ in {
     ];
 
     activation.installRustToolchain = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      ${pkgs.rustup}/bin/rustup install ${rustVersion}
-    ${pkgs.rustup}/bin/rustup default ${rustVersion}
+      ${pkgs.rustup}/bin/rustup default ${rustVersion}
     '';
   };
 }
