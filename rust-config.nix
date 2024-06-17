@@ -2,7 +2,7 @@
 let
   rustVersion = "1.79";
 in {
-  home {
+  home = {
     packages = with pkgs; [
       rustup
     ];
