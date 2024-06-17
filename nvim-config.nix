@@ -14,16 +14,22 @@ in {
         dotnet-sdk_8
     ];
 
-  	activation.createNvimConfigDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
-  		mkdir -p ${nvimConfigDir}
-  	'';
-  
-    activation.cloneNvimConfig = lib.hm.dag.entryAfter ["createNvimConfigDir"] ''
-      if [ ! -d ${nvimConfigDir}/.git ]; then
-        ${pkgs.git}/bin/git clone ${nvimConfigUrl} ${nvimConfigDir};
-      else
-        ${pkgs.git}/bin/git -C ${nvimConfigDir} pull;
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
+
+    activation = {
+  	  createNvimConfigDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  		  mkdir -p ${nvimConfigDir}
+  	  '';
+
+      cloneNvimConfig = lib.hm.dag.entryAfter ["createNvimConfigDir"] ''
+        if [ ! -d ${nvimConfigDir}/.git ]; then
+          ${pkgs.git}/bin/git clone ${nvimConfigUrl} ${nvimConfigDir};
+        else
+          ${pkgs.git}/bin/git -C ${nvimConfigDir} pull;
       fi
-    '';
+        '';
+    };
   };
 }
