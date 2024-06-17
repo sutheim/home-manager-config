@@ -5,15 +5,13 @@
     imports = [
 	    ./nvim-config.nix
 	    ./rust-config.nix
+	    ./zig-config.nix
     ];
 
     home = {
       packages = with pkgs; [
-        zig
         unzip
-        nodejs
         just
-        dotnet-sdk_8
         nushell
         gitui
         (nerdfonts.override { fonts = [ "Cousine" ]; })

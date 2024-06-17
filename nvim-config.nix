@@ -9,6 +9,11 @@ in {
   };
 
   home = {
+    packages = with pkgs; [
+        nodejs
+        dotnet-sdk_8
+    ];
+
   	activation.createNvimConfigDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
   		mkdir -p ${nvimConfigDir}
   	'';
