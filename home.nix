@@ -3,13 +3,11 @@
     username = "sondre";
   in {
     imports = [
-	./nvim-config.nix
+	    ./nvim-config.nix
     ];
 
     home = {
       packages = with pkgs; [
-        neovim
-	git
         zig
         rustup
         unzip
@@ -38,7 +36,9 @@
 
     programs = {
       alacritty.enable = true;
+      home-manager.enable = true;
     };
+
 
     fonts.fontconfig.enable = true;
 }
