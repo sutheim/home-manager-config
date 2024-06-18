@@ -6,13 +6,13 @@
 	    ./nvim-config.nix
 	    ./rust-config.nix
 	    ./zig-config.nix
+	    ./shell.nix
     ];
 
     home = {
       packages = with pkgs; [
         unzip
         just
-        nushell
         gitui
         (nerdfonts.override { fonts = [ "Cousine" ]; })
       ];
