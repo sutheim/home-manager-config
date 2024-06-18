@@ -1,13 +1,17 @@
 { config, pkgs, ... }:
 let
-  zigccPath = "${config.home.homeDirectory}/zig/zigcc";
+  zigccPath = "/zig/zigcc";
+  zigccPathAbsolute = "${config.home.homeDirectory}${zigccPath}";
+
+  zigcxxPath = "/zig/zigcxx";
+  zigcxxPathAbsolute = "${config.home.homeDirectory}${zigcxxPath}";
 in {
   home = {
     packages = with pkgs; [
       zig
     ];
 
-    file."zig/zigcc" = {
+    file."${zigccPath}" = {
       executable = true;
       text = ''
         #!/bin/sh
@@ -15,11 +19,18 @@ in {
       '';
     };
 
+    file."${zigcxxPath}" = {
+      executable = true;
+      text = ''
+        #!/bin/sh
+        ${pkgs.zig}/bin/zig c++ $@
+      '';
+    };
+
     sessionVariables = {
-      CC = "${zigccPath}";
-      CXX = "${pkgs.zig}/bin/zig c++ $@";
+      CC = "${zigccPathAbsolute}";
+      CXX = "${zigcxxPathAbsolute}";
       RUSTFLAGS = "-C linker=${zigccPath}";
-      CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER = "${zigccPath}";
     };
   };
 
