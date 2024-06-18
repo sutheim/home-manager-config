@@ -5,11 +5,6 @@ let
 
   nushellConfigUrl = "git@github.com:sutheim/nushell-config.git";
   nushellConfigDir = "${config.home.homeDirectory}/.config/nushell";
-
-  # nushellConfig = builtins.fetchGit {
-  #   url = "${nushellConfigUrl}";
-  #   rev = "bf5f56adfd0a7a171bbeee80a672de3c68d00b3b";
-  # };
 in {
   home = {
     packages = with pkgs; [
@@ -20,8 +15,6 @@ in {
       zoxide
       openssh
     ];
-
-    # file."${nushellConfigDir}".source = nushellConfig;
 
     activation = {
       startSSHAgent = lib.hm.dag.entryAfter ["writeBoundary"] ''
@@ -50,9 +43,5 @@ in {
       url = "${starshipConfigUrl}";
       sha256 = "0kcbp8nfr67hqdaml406cx7pzfryd3m2v5ia9pcpagyxlgpfqfxn";
     });
-
-    # activation.installRustToolchain = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    #   ${pkgs.rustup}/bin/rustup default ${rustVersion}
-    # '';
   };
 }

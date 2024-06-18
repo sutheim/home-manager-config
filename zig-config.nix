@@ -8,11 +8,11 @@ in {
     ];
 
     file."zig/zigcc" = {
-    executable = true;
-    text = ''
-    #!/bin/sh
-    ${pkgs.zig}/bin/zig cc $@
-    '';
+      executable = true;
+      text = ''
+        #!/bin/sh
+        ${pkgs.zig}/bin/zig cc $@
+      '';
     };
 
     sessionVariables = {
