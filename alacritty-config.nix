@@ -6,7 +6,7 @@ in {
   home = {
     file."${alacrittyConfigPath}".text = builtins.readFile(builtins.fetchurl {
       url = "${alacrittyConfigUrl}";
-      sha256 = "0493m1y8qi50qz5a3x238xdpv9nnkvjhnn7qbwh7037qyqhfgwiv";
+      sha256 = "0sm21h19ayw9fp42p9rvl2s296x7ynbnk79qi46rh1d04xbdkdmf";
     });
   };
 
