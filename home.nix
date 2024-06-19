@@ -7,6 +7,7 @@
 	    ./rust-config.nix
 	    ./zig-config.nix
 	    ./shell.nix
+	    ./alacritty-config.nix
     ];
 
     home = {
@@ -32,7 +33,6 @@
     };
 
     programs = {
-      alacritty.enable = true;
       home-manager.enable = true;
     };
 
